@@ -21,19 +21,7 @@ chosenChars += p.includedChars(includeLowercase, lowercase);
 chosenChars += p.includedChars(includeUppercase, uppercase);
 chosenChars += p.includedChars(includeSpecial, special);
 
-int passwordLength = 0;
-while(true){
-    Console.WriteLine("Great! Lastly. How long do you want to keep your password length?");
-	try
-	{
-        passwordLength = Int32.Parse(Console.ReadLine());
-        break;
-    }
-	catch (Exception)
-	{
-		Console.WriteLine("Please enter a number.");
-	}
-}
+int passwordLength = p.passwordLength();
 
 Console.WriteLine("\n-------------------------------------------------\n" 
                   + p.createPassword(passwordLength, chosenChars)

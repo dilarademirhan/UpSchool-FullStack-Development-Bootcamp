@@ -17,7 +17,6 @@ namespace simplePasswordGenerator
                         returnValue = characters;
                         break;
                     case "n":
-                        returnValue = "";
                         break;
                     default:
                         Console.WriteLine("Please answer like y/n");
@@ -37,6 +36,24 @@ namespace simplePasswordGenerator
             return password;
         }
         
+        public int passwordLength()
+        {
+            int passwordLength = 0;
+            while (true)
+            {
+                Console.WriteLine("Great! Lastly. How long do you want to keep your password length?");
+                try
+                {
+                    passwordLength = Int32.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Please enter a number.");
+                }
+            }
+            return passwordLength;
+        }
     }
 }
 
