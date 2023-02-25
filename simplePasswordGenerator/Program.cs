@@ -21,8 +21,6 @@ chosenChars += p.includedChars(includeLowercase, lowercase);
 chosenChars += p.includedChars(includeUppercase, uppercase);
 chosenChars += p.includedChars(includeSpecial, special);
 
-int passwordLength = p.passwordLength();
+p.printPassword(chosenChars);
 
-Console.WriteLine("\n-------------------------------------------------\n" 
-                  + p.createPassword(passwordLength, chosenChars)
-                  + "\n-------------------------------------------------\n");
+Console.ReadLine();

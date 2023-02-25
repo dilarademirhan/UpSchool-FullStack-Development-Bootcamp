@@ -7,14 +7,14 @@ namespace simplePasswordGenerator
         public string includedChars(string question, string characters)
         {
             Console.WriteLine(question);
-            string returnValue = "";
+            string includedChars = "";
             while (true)
             {
                 string userInput = Console.ReadLine();
                 switch (userInput.ToLower())
                 {
                     case "y":
-                        returnValue = characters;
+                        includedChars = characters;
                         break;
                     case "n":
                         break;
@@ -22,7 +22,7 @@ namespace simplePasswordGenerator
                         Console.WriteLine("Please answer like y/n");
                         continue;
                 }
-                return returnValue;
+                return includedChars;
             }
         }
 
@@ -45,6 +45,10 @@ namespace simplePasswordGenerator
                 try
                 {
                     passwordLength = Int32.Parse(Console.ReadLine());
+                    while(passwordLength <= 0){
+                        Console.WriteLine("Please enter a positive nunmber.");
+                        passwordLength = Int32.Parse(Console.ReadLine());
+                    }
                     break;
                 }
                 catch (Exception)
@@ -53,6 +57,12 @@ namespace simplePasswordGenerator
                 }
             }
             return passwordLength;
+        }
+
+        public void printPassword(string chosenChars){
+            Console.WriteLine("\n-------------------------------------------------\n" 
+                              + createPassword(passwordLength(), chosenChars)
+                              + "\n-------------------------------------------------\n");
         }
     }
 }
