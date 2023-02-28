@@ -1,1 +1,1 @@
-# UP School Full Stack Development Program
+# UpSchool-FullStack-Development-Bootcamp
